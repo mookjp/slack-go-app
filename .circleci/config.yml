@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.14
+    working_directory: /go/src/github.com/mookjp/slack-go-app
+    steps:
+      - checkout
+      - run:
+          name: "make build"
+          command: |
+            make build
